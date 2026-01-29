@@ -1,0 +1,176 @@
+.highlight-new {
+    animation: highlightNew 3s ease-in-out;
+}
+
+.highlight-update {
+    animation: highlightUpdate 3s ease-in-out;
+}
+
+.highlight-assignment {
+    animation: highlightAssignment 3s ease-in-out;
+}
+
+.highlight-acceptance {
+    animation: highlightAcceptance 3s ease-in-out;
+}
+
+.highlight-acknowledgment {
+    animation: highlightAcknowledgment 3s ease-in-out;
+}
+
+.pulse-animation {
+    animation: pulse 2s ease-in-out;
+}
+
+@keyframes highlightNew {
+    0% { background-color: #d4edda; }
+    50% { background-color: #c3e6cb; }
+    100% { background-color: transparent; }
+}
+
+@keyframes highlightUpdate {
+    0% { background-color: #fff3cd; }
+    50% { background-color: #ffeaa7; }
+    100% { background-color: transparent; }
+}
+
+@keyframes highlightAssignment {
+    0% { background-color: #d1ecf1; }
+    50% { background-color: #bee5eb; }
+    100% { background-color: transparent; }
+}
+
+@keyframes highlightAcceptance {
+    0% { background-color: #d4edda; }
+    50% { background-color: #c3e6cb; }
+    100% { background-color: transparent; }
+}
+
+@keyframes highlightAcknowledgment {
+    0% { background-color: #d1ecf1; }
+    50% { background-color: #bee5eb; }
+    100% { background-color: transparent; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.realtime-indicator {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #28a745;
+    animation: pulse 2s infinite;
+    z-index: 9999;
+}
+
+.realtime-indicator.disconnected {
+    background-color: #dc3545;
+    animation: none;
+}
+
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.toast {
+    margin-bottom: 10px;
+    min-width: 300px;
+}
+
+.notification-badge {
+    transition: all 0.3s ease;
+}
+
+.notification-badge.pulse-animation {
+    animation: pulse 2s ease-in-out;
+}
+
+.table tr.highlight-new,
+.table tr.highlight-update,
+.table tr.highlight-assignment,
+.table tr.highlight-acceptance,
+.table tr.highlight-acknowledgment {
+    transition: background-color 0.3s ease;
+}
+
+.card.highlight-new,
+.card.highlight-update,
+.card.highlight-assignment,
+.card.highlight-acceptance,
+.card.highlight-acknowledgment {
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+}
+
+.status-badge {
+    transition: all 0.3s ease;
+}
+
+.status-badge.updated {
+    animation: pulse 1s ease-in-out;
+}
+
+.realtime-status {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.realtime-status.connected {
+    background: rgba(40, 167, 69, 0.9);
+}
+
+.realtime-status.disconnected {
+    background: rgba(220, 53, 69, 0.9);
+}
+
+.realtime-status .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: pulse 2s infinite;
+}
+
+.realtime-status.disconnected .status-dot {
+    animation: none;
+}
+
+@media (max-width: 768px) {
+    .toast-container {
+        top: 10px;
+        right: 10px;
+        left: 10px;
+    }
+    
+    .toast {
+        min-width: auto;
+        width: 100%;
+    }
+    
+    .realtime-status {
+        bottom: 10px;
+        right: 10px;
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+} 
